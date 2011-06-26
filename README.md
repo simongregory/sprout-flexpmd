@@ -42,7 +42,7 @@ Then invoke it with
 
     rake audit
     
-Output can be found in the `report/` directory created in the project root. This is best consumed via the relevant [Jenkins|http://jenkins-ci.org/] plugins.
+Output can be found in the `report/` directory created in the project root. This is best consumed via the relevant [Jenkins](http://jenkins-ci.org/) plugins.
     
 ## MIT License
 
