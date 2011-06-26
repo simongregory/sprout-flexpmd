@@ -14,7 +14,7 @@ Functionality is only tested on OSX, it is *not expected* to work on Windows. Yo
     
 #### Or
 
-    gem install flexpmd --pre
+    gem install flexpmd
 
 ## Usage
 
@@ -28,18 +28,21 @@ Add the following to your rake file
     desc "Use FlexCPD to detect copy pasted code"
     flexcpd 'report/cpd.xml' do |t|
       t.src = 'src'
+      t.minimum_tokens = 50
     end
 
     desc "Use FlexMetrics to generate code metrics for this project"
-    flexmetrics 'report/metrics' do |t|
+    flexmetrics 'report/metrics.xml' do |t|
       t.src = 'src'
     end
 
-    task :audit => ['report/pmd', 'report/cpd.xml', 'report/metrics']
+    task :audit => ['report/pmd', 'report/cpd.xml', 'report/metrics.xml']
     
 Then invoke it with
 
     rake audit
+    
+Output can be found in the `report/` directory created in the project root. This is best consumed via the relevant [Jenkins|http://jenkins-ci.org/] plugins.
     
 ## MIT License
 
