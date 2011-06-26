@@ -3,7 +3,7 @@ require 'test_helper'
 class FlexPMDTest < Test::Unit::TestCase
   include Sprout::TestHelper
 
-  context "A FlexPMD" do
+  context "A FlexPMD tool" do
 
     setup do
       @fixture = File.join fixtures, 'flexpmd', 'tmp'
@@ -19,11 +19,10 @@ class FlexPMDTest < Test::Unit::TestCase
       fpmd = FlexPMD::FPMD.new
       fpmd.src = @fixture
       fpmd.output = @app_desc
-      fpmd.ruleset = Dir.pwd
+      fpmd.rule_set = Dir.pwd
 
-      assert_equal "#{@output} #{Dir.pwd}", fpmd.to_shell
+      assert_equal "-s=#{@fixture} -r=#{Dir.pwd}", fpmd.to_shell
     end
   end
   
 end
-
