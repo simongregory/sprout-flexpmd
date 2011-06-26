@@ -32,7 +32,7 @@ module FlexPMD
     # method name, operator etc. As this is subjective experiment to find a useful value. 50 to
     # 100 is a reasonable starting point, the lower the better.
     #
-    add_param :minimum_tokens, File, { :shell_name => '-m' }
+    add_param :minimum_tokens, Number, { :shell_name => '-m' }
     
     add_param_alias :m, :minimum_tokens
             
