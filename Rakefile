@@ -48,3 +48,8 @@ task :release do
   sh "git push origin master"
   sh "git push origin v#{FlexPMD::VERSION}"
 end
+
+task :install do
+  sh "gem build flexpmd.gemspec"
+  sh "gem install flexpmd-#{FlexPMD::VERSION}.gem"
+end
