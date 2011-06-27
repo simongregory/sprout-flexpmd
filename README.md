@@ -20,22 +20,20 @@ Functionality is only tested on OSX, it is *not expected* to work on Windows. Yo
 
 Add the following to your rake file
 
-    desc "Use FlexPMD to audit source code"
     flexpmd 'report/pmd' do |t|
       t.src = 'src'
     end
 
-    desc "Use FlexCPD to detect copy pasted code"
     flexcpd 'report/cpd.xml' do |t|
       t.src = 'src'
       t.minimum_tokens = 50
     end
 
-    desc "Use FlexMetrics to generate code metrics for this project"
     flexmetrics 'report/metrics.xml' do |t|
       t.src = 'src'
     end
 
+    desc "Run FlexPMD, FlexCPD, and FlexMetrics to audit the project"
     task :audit => ['report/pmd', 'report/cpd.xml', 'report/metrics.xml']
     
 Then invoke it with
@@ -43,6 +41,14 @@ Then invoke it with
     rake audit
     
 Output can be found in the `report/` directory created in the project root. This is best consumed via the relevant [Jenkins](http://jenkins-ci.org/) plugins.
+
+## Versioning
+
+The version number of the gem is based on the underlying FlexPMD release number, ie 1.2, followed by a single digit expressing the gem version.
+
+## On the horizon
+
+Initial release has focused on enabling report generation. As the reports are in xml, and not easy on the eye, it is intended that they are post consumed and output to the command line in a more relevant format.
     
 ## MIT License
 
