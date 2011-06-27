@@ -8,7 +8,7 @@ require 'flexpmd/base'
 module FlexPMD 
   NAME    = 'flexpmd'
   JAR_VERSION = '1.2'
-  VERSION = "#{JAR_VERSION}.1"
+  VERSION = "#{JAR_VERSION}.2"
   MD5 = 'efd3fa459788fa3d32837628dc82e264'
   ZIP = 'http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/com/adobe/ac/flex-pmd/1.2/flex-pmd-all-in-one-bundle-1.2.zip'
 end
