@@ -6,7 +6,7 @@ module FlexPMD
   # (-s|--sourceDirectory) <sourceDirectory>
   # (-o|--outputDirectory) <outputDirectory>
   #
-  class FlexMetrics < Sprout::Executable::Base
+  class FlexMetrics < FlexPMD::Executable::Base
     
     ##
     # The source path to run flexpmd against.
@@ -26,7 +26,7 @@ module FlexPMD
     # The default executable target.
     #
     set :executable, :flexmetrics
-
+    
   end
   
 end

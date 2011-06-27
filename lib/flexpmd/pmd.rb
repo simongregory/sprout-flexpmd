@@ -8,7 +8,7 @@ module FlexPMD
   #[(-r|--ruleSet) <ruleSet>]
   #[(-e|--excludePackage) <excludePackage>]
   #
-  class FPMD < Sprout::Executable::Base
+  class FPMD < FlexPMD::Executable::Base
 
     ##
     # The source path to run flexpmd against.

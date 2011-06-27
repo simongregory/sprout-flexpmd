@@ -1,9 +1,9 @@
 require 'sprout'
 
+require 'flexpmd/base'
 require 'flexpmd/pmd'
 require 'flexpmd/cpd'
 require 'flexpmd/metrics'
-require 'flexpmd/base'
 
 module FlexPMD 
   NAME    = 'flexpmd'

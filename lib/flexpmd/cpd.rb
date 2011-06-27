@@ -7,7 +7,7 @@ module FlexPMD
   #  (-o|--outputFile) <outputFile> 
   # [(-m|--minimumTokens) <minimumTokens>]]
   #
-  class FCPD < Sprout::Executable::Base
+  class FCPD < FlexPMD::Executable::Base
 
     ##
     # The source directory to recursively audit
@@ -40,7 +40,7 @@ module FlexPMD
     # The default executable target.
     #
     set :executable, :flexcpd
-
+    
   end
   
 end

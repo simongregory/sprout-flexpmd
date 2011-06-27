@@ -1,10 +1,10 @@
 module Sprout::System
-
+  
   ##
-  # Monkey patch the base system so we control the output to stderr.
+  # Extend the unix system so we can run tools with a 'java -jar' prefix.
   #
-  class BaseSystem
-
+  class JavaUnixSystem < UnixSystem
+    
     ##
     # Creates a new process, executes the command
     # and returns whatever the process wrote to stdout, or stderr.
@@ -29,13 +29,6 @@ module Sprout::System
 
       result || error
     end
-    
-  end
-  
-  ##
-  # Monkey patch the unix system so we can run tool with 'java -jar'.
-  #
-  class UnixSystem < BaseSystem
 
     ##
     # Get a process runner and execute the provided +executable+,
@@ -54,4 +47,17 @@ module Sprout::System
      
   end
   
+end
+
+module FlexPMD
+  module Executable
+    class Base < Sprout::Executable::Base
+      ##
+      # This isn't very friendly to non unix users and needs to be addressed in future releases.
+      def system_execute binary, params
+        sys = Sprout::System::JavaUnixSystem.new
+        sys.execute binary, params
+      end
+    end
+  end  
 end
