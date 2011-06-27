@@ -20,7 +20,7 @@ Functionality is only tested on OSX, it is *not expected* to work on Windows. Yo
 
 Add the following to your rake file
 
-    flexpmd 'report/pmd' do |t|
+    flexpmd 'report' do |t|
       t.src = 'src'
     end
 
