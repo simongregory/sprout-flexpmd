@@ -20,9 +20,11 @@ module Sprout::System
       end
 
       if(error.size > 0)
-        # We expect the process to write to stderror so simply print it, we don't want Sprouts 
-        # to stop executing.
-        Sprout.stdout.puts error
+        # We expect the process to write to stderror so filter and print it, we don't want Rake 
+        # to stop executing. 'WARNING' is consciously supressed as I've not seen it used as a 
+        # prefix to anything meaningful.
+        #
+        error.each_line { |line| Sprout.stdout.puts line if line =~ /^(ERROR|INFO):/ }
       end
 
       result || error
