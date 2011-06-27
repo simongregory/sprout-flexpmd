@@ -17,12 +17,24 @@ class FlexPMDTest < Test::Unit::TestCase
 
     should "accept input" do
       fpmd = FlexPMD::FPMD.new
-      fpmd.src = @fixture
-      fpmd.output = @app_desc
+      fpmd.source_directory = @fixture
+      fpmd.output_directory = 'report/pmd'
       fpmd.rule_set = Dir.pwd
+      fpmd.exclude_package = 'org.foo'
 
-      assert_equal "-s=#{@fixture} -r=#{Dir.pwd}", fpmd.to_shell
+      assert_equal "-s=#{@fixture} -o=report/pmd -r=#{Dir.pwd} -e=org.foo", fpmd.to_shell
     end
+    
+    should "accept input using aliases" do
+      fpmd = FlexPMD::FPMD.new
+      fpmd.s = @fixture
+      fpmd.o = 'report/pmd'
+      fpmd.r = Dir.pwd
+      fpmd.e = 'org.foo'
+      
+      assert_equal "-s=#{@fixture} -o=report/pmd -r=#{Dir.pwd} -e=org.foo", fpmd.to_shell
+    end
+    
   end
   
 end
