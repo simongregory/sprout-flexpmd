@@ -1,19 +1,21 @@
 # The FlexPMD Sprout Gem
 
+[![Build Status](https://secure.travis-ci.org/simongregory/sprout-flexpmd.png)](http://travis-ci.org/simongregory/sprout-flexpmd)
+
 This [RubyGem](http://docs.rubygems.org/read/book/7) contains a rake task to add support for [FlexPMD](http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD) in [Project Sprouts](http://projectsprouts.org).
 
 Functionality is only tested on OSX, it is *not expected* to work on Windows. You may be ok on Linux.
 
 ## Install
 
+    gem install flexpmd
+
+#### Or
+
     git clone [this repo]
     cd sprout-flexpmd
     bundle install
-    gem build flexpmd.gemspec 
-    gem install flexpmd
-    
-#### Or
-
+    gem build flexpmd.gemspec
     gem install flexpmd
 
 ## Usage
@@ -35,11 +37,11 @@ Add the following to your rake file
 
     desc "Run FlexPMD, FlexCPD, and FlexMetrics to audit the project"
     task :audit => ['report/pmd', 'report/cpd.xml', 'report/metrics.xml']
-    
+
 Then invoke it with
 
     rake audit
-    
+
 Output can be found in the `report/` directory created in the project root. This is best consumed via the relevant [Jenkins](http://jenkins-ci.org/) plugins.
 
 ## Versioning
