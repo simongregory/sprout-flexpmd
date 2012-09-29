@@ -6,7 +6,7 @@ Bundler.require :default, :development
 # http://bit.ly/bCC0Ew
 # Somewhat surprised they're not being required by Bundler...
 require 'shoulda'
-require 'mocha'
+#require 'mocha'
 
 lib = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'lib'))
 $:.unshift lib unless $:.include? lib
