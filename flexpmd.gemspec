@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.files.reject!             { |fn| fn.match /\.(DS_Store|svn|git|tmproj|gem)|tmp/ }
   s.add_dependency             'sprout', '>= 1.1.15.pre'
   s.add_development_dependency 'shoulda'
+  s.add_development_dependency 'rake'
   s.require_paths << 'lib'
 end
 
