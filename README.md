@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/simongregory/sprout-flexpmd.png)](http://travis-ci.org/simongregory/sprout-flexpmd)
 
-This [RubyGem](http://docs.rubygems.org/read/book/7) contains a rake task to add support for [FlexPMD](http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD) in [Project Sprouts](http://projectsprouts.org).
+This [RubyGem](http://docs.rubygems.org/read/book/7) contains a rake task to add support for [FlexPMD](http://sourceforge.net/adobe/flexpmd) in [Project Sprouts](http://projectsprouts.org).
 
 Functionality is only tested on OSX, it is *not expected* to work on Windows. You may be ok on Linux.
 
